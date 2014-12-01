@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="1" model="hr.job"> <field name="name">Accountant</field> </record>
+		<record id="2" model="hr.job"> <field name="name">Administration Manager</field> </record>
+		<record id="3" model="hr.job"> <field name="name">Administrator</field> </record>
+		<record id="4" model="hr.job"> <field name="name">Business Development Director</field> </record>
+		<record id="5" model="hr.job"> <field name="name">Business Development Manager</field> </record>
+		<record id="6" model="hr.job"> <field name="name">Chief Operations Officer</field> </record>
+		<record id="7" model="hr.job"> <field name="name">Chief Technology Officer</field> </record>
+		<record id="8" model="hr.job"> <field name="name">Country Manager</field> </record>
+		<record id="9" model="hr.job"> <field name="name">Director of Finance</field> </record>
+		<record id="10" model="hr.job"> <field name="name">Driver</field> </record>
+		<record id="11" model="hr.job"> <field name="name">Financial Controller</field> </record>
+		<record id="12" model="hr.job"> <field name="name">HR and Admin Assistant</field> </record>
+		<record id="13" model="hr.job"> <field name="name">HSE</field> </record>
+		<record id="14" model="hr.job"> <field name="name">Human Resources Manager</field> </record>
+		<record id="15" model="hr.job"> <field name="name">International Well Log Analyst Manager</field> </record>
+		<record id="16" model="hr.job"> <field name="name">Junior Tech. Sales Engineer</field> </record>
+		<record id="17" model="hr.job"> <field name="name">Logging Engineer</field> </record>
+		<record id="18" model="hr.job"> <field name="name">Maintenance</field> </record>
+		<record id="19" model="hr.job"> <field name="name">Operations Manager - AD </field> </record>
+		<record id="20" model="hr.job"> <field name="name">Operations Manager - Oman</field> </record>
+		<record id="21" model="hr.job"> <field name="name">Reservoir Engineer</field> </record>
+		<record id="22" model="hr.job"> <field name="name">Rublic Relation Officer</field> </record>
+		<record id="23" model="hr.job"> <field name="name">Sales Engineer</field> </record>
+		<record id="24" model="hr.job"> <field name="name">Sr. Technical Sales Engineer</field> </record>
+		<record id="25" model="hr.job"> <field name="name">Tech. Sales Engineer</field> </record>
+		<record id="26" model="hr.job"> <field name="name">Technical Sales Engineer</field> </record>
+		<record id="27" model="hr.job"> <field name="name">Well Integrity Advisor</field> </record>
+		<record id="28" model="hr.job"> <field name="name">Well Log Analyst</field> </record>
+	</data>
+	
+</openerp>
+
+

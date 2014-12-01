@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="view_tgt_account_asset_location_summary_report_form" model="ir.ui.view">
+            <field name="name">tgt.account.asset.summary.report.form</field>
+            <field name="model">tgt.account.asset.summary.report</field>
+            <field name="arch" type="xml">
+                <form string="Assets Tool fleet sumart report" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="filter_id" required="1"></field>
+
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button string="Print report" class="oe_highlight" type="object" name="print_report"></button>
+                        <button special="cancel" string="cancel"></button>
+                    </footer>
+                    
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_tgt_account_asset_location_summary_report">
+            <field name="name">Assets Tool fleet summary report</field>
+            <field name="res_model">tgt.account.asset.summary.report</field>
+            <field name="src_model">tgt.account.asset.summary.report</field>
+            <field name="view_type">form</field>
+            <field name="target">new</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" ref="view_tgt_account_asset_location_summary_report_form"></field>
+            
+        </record>
+<!--  security  -->
+
+        <menuitem id="menu_tgt_account_asset_location_summary_report"
+        action="action_tgt_account_asset_location_summary_report" parent="final_asset_reports_xcel" sequence="12" />
+    </data>
+</openerp>

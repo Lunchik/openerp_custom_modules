@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="view_product_tgt_pricelist_form92" model="ir.ui.view">
+            <field name="name">tgt.log.analysis.form</field>
+            <field name="model">tgt.log.analysis</field>
+            <field name="arch" type="xml">
+                <form string="Log Engineering Analysis" version="7.0">
+                    <sheet>
+                        <group>
+                            <group><field name="company_ids" widget="many2many_tags"></field></group>
+                            <group>
+                                <field name="date_from"></field>
+                                <field name="date_to"></field>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button string="Print report" class="oe_highlight" type="object" name="print_report"></button>
+                        <button special="cancel" string="cancel"></button>
+                    </footer>
+                    
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_sales_analysis">
+            <field name="name">Rotators/Sales Analysis</field>
+            <field name="res_model">tgt.log.analysis</field>
+            <field name="src_model">tgt.log.analysis</field>
+            <field name="view_type">form</field>
+            <field name="target">new</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" ref="view_product_tgt_pricelist_form92"></field>
+            
+        </record>
+<!--  security  -->
+
+        
+
+         <menuitem icon="STOCK_PRINT" name="Sales Analysis XCEL" id="menu_base_sales_analysis" parent="account.menu_finance_reports" sequence="100" />
+
+         <menuitem id="menu_sales_analysis"
+        action="action_sales_analysis" parent="menu_base_sales_analysis"
+        sequence="12" groups="base.group_sales_superuser_tgt" />
+    </data>
+</openerp>

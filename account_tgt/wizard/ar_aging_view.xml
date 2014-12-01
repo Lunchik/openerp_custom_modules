@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+     <data>
+
+        <record id="ar_aging_report" model="ir.ui.view">
+            <field name="name">AR Aging Report XCEL</field>
+            <field name="model">ar.aging.report</field>
+            <field name="arch" type="xml">
+                <form string="AR Aging Report" version="7.0">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="company_ids" widget="many2many_tags"></field>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button type="object" string="Print Report" name="print_report" class="oe_highlight"></button>
+                        <button string="cancel" special="cancel"></button>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_ar_aging_xcel_menu" model="ir.actions.act_window">
+            <field name="name">AR Aging Report XCEL</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ar.aging.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+                icon="STOCK_PRINT"
+                name="AR Aging Report XCEL"
+                parent="account_tgt.final_accounting_reports_xcel"
+                action="action_ar_aging_xcel_menu"
+                id="menu_ar_aging_report_xcel"
+               />
+
+    </data>
+</openerp>

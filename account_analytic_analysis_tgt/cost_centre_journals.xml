@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- BVI Journals -->
+        <record model="account.analytic.journal" id="analytic_journal1_BVI">
+            <field name="name">Sale (BVI)</field>
+            <field name="type">sale</field>
+            <field name="code">SAL</field>
+            <field name="company_id" ref="base.main_company"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal2_BVI">
+            <field name="name">Purchase (BVI)</field>
+            <field name="type">purchase</field>
+            <field name="code">PUR</field>
+            <field name="company_id" ref="base.main_company"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal3_BVI">
+            <field name="name">Cash &amp; Bank (BVI)</field>
+            <field name="type">cash</field>
+            <field name="code">CSH</field>
+            <field name="company_id" ref="base.main_company"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal4_BVI">
+            <field name="name">General (BVI)</field>
+            <field name="type">general</field>
+            <field name="code">GNRL</field>
+            <field name="company_id" ref="base.main_company"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal5_BVI">
+            <field name="name">Expense (BVI)</field>
+            <field name="type">expense</field>
+            <field name="code">EXP</field>
+            <field name="company_id" ref="base.main_company"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal6_BVI">
+            <field name="name">Siuation (BVI)</field>
+            <field name="type">situation</field>
+            <field name="code">SITU</field>
+            <field name="company_id" ref="base.main_company"></field>
+        </record>
+
+        <!-- FZE Journals -->
+        <record model="account.analytic.journal" id="analytic_journal1_FZE">
+            <field name="name">Sale (FZE)</field>
+            <field name="type">sale</field>
+            <field name="code">SAL</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal2_FZE">
+            <field name="name">Purchase (FZE)</field>
+            <field name="type">purchase</field>
+            <field name="code">PUR</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal3_FZE">
+            <field name="name">Cash &amp; Bank (FZE)</field>
+            <field name="type">cash</field>
+            <field name="code">CSH</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal4_FZE">
+            <field name="name">General (FZE)</field>
+            <field name="type">general</field>
+            <field name="code">GNRL</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal5_FZE">
+            <field name="name">Expense (FZE)</field>
+            <field name="type">expense</field>
+            <field name="code">EXP</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal6_FZE">
+            <field name="name">Siuation (FZE)</field>
+            <field name="type">situation</field>
+            <field name="code">SITU</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+        </record>
+
+        <!-- DMCC Journals -->
+        <record model="account.analytic.journal" id="analytic_journal1_DMCC">
+            <field name="name">Sale (DMCC)</field>
+            <field name="type">sale</field>
+            <field name="code">SAL</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal2_DMCC">
+            <field name="name">Purchase (DMCC)</field>
+            <field name="type">purchase</field>
+            <field name="code">PUR</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal3_DMCC">
+            <field name="name">Cash &amp; Bank (DMCC)</field>
+            <field name="type">cash</field>
+            <field name="code">CSH</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal4_DMCC">
+            <field name="name">General (DMCC)</field>
+            <field name="type">general</field>
+            <field name="code">GNRL</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal5_DMCC">
+            <field name="name">Expense (DMCC)</field>
+            <field name="type">expense</field>
+            <field name="code">EXP</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal6_DMCC">
+            <field name="name">Siuation (DMCC)</field>
+            <field name="type">situation</field>
+            <field name="code">SITU</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+        </record>
+
+        <!-- US Journals -->
+        <record model="account.analytic.journal" id="analytic_journal1_US">
+            <field name="name">Sale (US)</field>
+            <field name="type">sale</field>
+            <field name="code">SAL</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal2_US">
+            <field name="name">Purchase (US)</field>
+            <field name="type">purchase</field>
+            <field name="code">PUR</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal3_US">
+            <field name="name">Cash &amp; Bank (US)</field>
+            <field name="type">cash</field>
+            <field name="code">CSH</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal4_US">
+            <field name="name">General (US)</field>
+            <field name="type">general</field>
+            <field name="code">GNRL</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal5_US">
+            <field name="name">Expense (US)</field>
+            <field name="type">expense</field>
+            <field name="code">EXP</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal6_US">
+            <field name="name">Siuation (US)</field>
+            <field name="type">situation</field>
+            <field name="code">SITU</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+        </record>
+
+        <!-- UK Journals -->
+        <record model="account.analytic.journal" id="analytic_journal1_UK">
+            <field name="name">Sale (UK)</field>
+            <field name="type">sale</field>
+            <field name="code">SAL</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal2_UK">
+            <field name="name">Purchase (UK)</field>
+            <field name="type">purchase</field>
+            <field name="code">PUR</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal3_UK">
+            <field name="name">Cash &amp; Bank (UK)</field>
+            <field name="type">cash</field>
+            <field name="code">CSH</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal4_UK">
+            <field name="name">General (UK)</field>
+            <field name="type">general</field>
+            <field name="code">GNRL</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal5_UK">
+            <field name="name">Expense (UK)</field>
+            <field name="type">expense</field>
+            <field name="code">EXP</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal6_UK">
+            <field name="name">Siuation (UK)</field>
+            <field name="type">situation</field>
+            <field name="code">SITU</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+        </record>
+
+        <!-- PRIME Journals -->
+        <record model="account.analytic.journal" id="analytic_journal1_PRIME">
+            <field name="name">Sale (PRIME)</field>
+            <field name="type">sale</field>
+            <field name="code">SAL</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal2_PRIME">
+            <field name="name">Purchase (PRIME)</field>
+            <field name="type">purchase</field>
+            <field name="code">PUR</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal3_PRIME">
+            <field name="name">Cash &amp; Bank (PRIME)</field>
+            <field name="type">cash</field>
+            <field name="code">CSH</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal4_PRIME">
+            <field name="name">General (PRIME)</field>
+            <field name="type">general</field>
+            <field name="code">GNRL</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal5_PRIME">
+            <field name="name">Expense (PRIME)</field>
+            <field name="type">expense</field>
+            <field name="code">EXP</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal6_PRIME">
+            <field name="name">Siuation (PRIME)</field>
+            <field name="type">situation</field>
+            <field name="code">SITU</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+        </record>
+
+        <!-- MIKS Journals -->
+        <record model="account.analytic.journal" id="analytic_journal1_MIKS">
+            <field name="name">Sale (MIKS)</field>
+            <field name="type">sale</field>
+            <field name="code">SAL</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal2_MIKS">
+            <field name="name">Purchase (MIKS)</field>
+            <field name="type">purchase</field>
+            <field name="code">PUR</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal3_MIKS">
+            <field name="name">Cash &amp; Bank (MIKS)</field>
+            <field name="type">cash</field>
+            <field name="code">CSH</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal4_MIKS">
+            <field name="name">General (MIKS)</field>
+            <field name="type">general</field>
+            <field name="code">GNRL</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal5_MIKS">
+            <field name="name">Expense (MIKS)</field>
+            <field name="type">expense</field>
+            <field name="code">EXP</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+        </record>
+        <record model="account.analytic.journal" id="analytic_journal6_MIKS">
+            <field name="name">Siuation (MIKS)</field>
+            <field name="type">situation</field>
+            <field name="code">SITU</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+        </record>
+
+    </data>
+</openerp>

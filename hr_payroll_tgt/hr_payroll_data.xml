@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="hr_rule_site_allowance" model="hr.salary.rule">
+            <field name="name">Site Allowance</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">SALLOW</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = 0.0
+if employee.is_rotator:
+    result = (inputs.SA_ONSHORE.amount * payslip.onshore) + (inputs.SA_ONSHORE_P.amount * (payslip.onshore + payslip.travel)) + (inputs.SA_OFFSHORE.amount * payslip.offshore) + (inputs.SA_OFFSHORE_P.amount * (payslip.offshore + payslip.travel)) + (inputs.SA_MALLOW.amount * payslip.travel) + (inputs.SA_BASE_P.amount * payslip.travel)</field>
+        </record>
+        <record id="hr_rule_housing_allownace" model="hr.salary.rule">
+            <field name="name">Housing Allowance</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">HALLOW</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.hadvance_amount</field>
+        </record>
+        <record id="hr_rule_housing_advance" model="hr.salary.rule">
+            <field name="name">Housing Advance</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">HADVANCE</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.HADVANCE.amount</field>
+        </record>
+        <record id="hr_rule_social_security" model="hr.salary.rule">
+            <field name="name">Social Security Employee</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">SS_GOSI</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.social_security_gosi * -1</field>
+        </record>
+        <record id="hr_rule_sponser_deduction" model="hr.salary.rule">
+            <field name="name">Sponsor Deduction</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">SPONSOR_DED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.sponser_deduction * -1</field>
+        </record>
+        <record id="hr_rule_onpaid_vacation" model="hr.salary.rule">
+            <field name="name">Unpaid Vacation</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">ONP_VACATION</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.onpaid_vacation * -1</field>
+        </record>
+        
+        <record id="hr_rule_housing_advance_ded" model="hr.salary.rule">
+            <field name="name">Housing Advance Deduction</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">HADVANCE_DED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.HADVANCE_DED.amount * -1</field>
+        </record>
+
+        <record id="hr_rule_trans_allow" model="hr.salary.rule">
+            <field name="name">Transportation Allowance</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">TRANS_ALLOW</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.trans_allowance</field>
+        </record>
+
+        <record id="hr_rule_other_ear" model="hr.salary.rule">
+            <field name="name">Other Earnings</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">OTHER_EAR</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = 0.0
+has = [k['amount'] for k in payslip.input_line_ids if k['code'].startswith('O2')]
+for i in has:
+    result += i</field>
+        </record>
+
+        <record id="hr_rule_salary_tax" model="hr.salary.rule">
+            <field name="name">Salary Tax</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">SALARY_TAX</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.salary_tax * -1</field>
+        </record>
+
+        <record id="hr_rule_personal_inc" model="hr.salary.rule">
+            <field name="name">Personal Income Tax</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">PIN_TAX</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.p_income_tax * -1</field>
+        </record>
+
+        <record id="hr_rule_pension_fund" model="hr.salary.rule">
+            <field name="name">Pension Fund</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">PEN_FUND</field>
+            <field name="category_id" ref="hr_payroll.COMP"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.pension_fund * -1</field>
+        </record>
+
+        <record id="hr_rule_compulsory_health" model="hr.salary.rule">
+            <field name="name">Compulsory Health</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">COM_HEALTH</field>
+            <field name="category_id" ref="hr_payroll.COMP"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.compulsary_health * -1</field>
+        </record>
+
+        <record id="hr_rule_ssemployer" model="hr.salary.rule">
+            <field name="name">Social Security Employer</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">SS_EMPLOYER</field>
+            <field name="category_id" ref="hr_payroll.COMP"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.social_security * -1</field>
+        </record>
+
+        <record id="hr_rule_other_ded" model="hr.salary.rule">
+            <field name="name">Other Deductions</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">OTHER_DED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = 0.0
+has = [k['amount'] for k in payslip.input_line_ids if k['code'].startswith('O3')]
+for i in has:
+    result += i * -1.0</field>
+        </record>
+
+        <!-- Salary Structure -->
+        
+        <record id="hr_payroll.structure_base" model="hr.payroll.structure">
+            <field name="name">Base for Employees</field>
+            <field eval="[(6, 0, [ref('hr_payroll.hr_rule_basic'),ref('hr_payroll.hr_rule_taxable'),ref('hr_payroll.hr_rule_net'),ref('hr_rule_housing_allownace'),ref('hr_rule_housing_advance'),ref('hr_rule_social_security'),ref('hr_rule_sponser_deduction'),ref('hr_rule_onpaid_vacation'),ref('hr_rule_housing_advance_ded'),ref('hr_rule_trans_allow'),ref('hr_rule_other_ear'),ref('hr_rule_salary_tax'),ref('hr_rule_personal_inc'),ref('hr_rule_pension_fund'),ref('hr_rule_compulsory_health'),ref('hr_rule_ssemployer'),ref('hr_rule_other_ded')])]" name="rule_ids"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+         <record id="structure_base_rotator" model="hr.payroll.structure">
+            <field name="code">BfR</field>
+            <field name="name">Base for Rotators</field>
+            <field name="parent_id" ref="hr_payroll.structure_base"></field>
+            <field eval="[(6, 0, [ref('hr_rule_site_allowance')])]" name="rule_ids"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+    </data>
+</openerp>

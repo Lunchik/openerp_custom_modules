@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="account.analytic.account" id="analytic_account_AUH">
+            <field name="name">AUH Ops</field>
+            <field name="type">view</field>
+            <field name="company_id" eval="False"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_DXB">
+            <field name="name">DXB Ops</field>
+            <field name="type">view</field>
+            <field name="company_id" eval="False"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_OMAN">
+            <field name="name">OMAN Ops</field>
+            <field name="type">view</field>
+            <field name="company_id" eval="False"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_KUWAIT">
+            <field name="name">KUWAIT Ops</field>
+            <field name="type">view</field>
+            <field name="company_id" eval="False"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_IRAQ">
+            <field name="name">IRAQ Ops</field>
+            <field name="type">view</field>
+            <field name="company_id" eval="False"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_QATAR">
+            <field name="name">QATAR Ops</field>
+            <field name="type">view</field>
+            <field name="company_id" eval="False"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_SAUDI">
+            <field name="name">SAUDI Ops</field>
+            <field name="type">view</field>
+            <field name="company_id" eval="False"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_RUSSIA">
+            <field name="name">RUSSIA Ops</field>
+            <field name="type">view</field>
+            <field name="company_id" eval="False"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_MALAYSIA">
+            <field name="name">MALAYSIA Ops</field>
+            <field name="type">view</field>
+            <field name="company_id" eval="False"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_AUH">
+            <field name="name">AUH Ops</field>
+            <field name="type">view</field>
+            <field name="company_id" eval="False"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_NIGERIA">
+            <field name="name">NIGERIA Ops</field>
+            <field name="type">view</field>
+            <field name="company_id" eval="False"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_UK">
+            <field name="name">UK Ops</field>
+            <field name="type">view</field>
+            <field name="company_id" eval="False"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_US">
+            <field name="name">US Ops</field>
+            <field name="type">view</field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <!-- Main Cost Centres analytic_account_AUH -->
+
+        <record model="account.analytic.account" id="analytic_account_AUH_BVI">
+            <field name="name">AUH Ops (BVI)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base.main_company"></field>
+            <field name="parent_id" ref="analytic_account_AUH"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_AUH_DMCC">
+            <field name="name">AUH Ops (DMCC)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+            <field name="parent_id" ref="analytic_account_AUH"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_AUH_FZE">
+            <field name="name">AUH Ops (FZE)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+            <field name="parent_id" ref="analytic_account_AUH"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_AUH_US">
+            <field name="name">AUH Ops (US)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+            <field name="parent_id" ref="analytic_account_AUH"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_AUH_UK">
+            <field name="name">AUH Ops (UK)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+            <field name="parent_id" ref="analytic_account_AUH"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_AUH_PRIME">
+            <field name="name">AUH Ops (PRIME)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+            <field name="parent_id" ref="analytic_account_AUH"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_AUH_MIKS">
+            <field name="name">AUH Ops (MIKS)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+            <field name="parent_id" ref="analytic_account_AUH"></field>
+        </record>
+
+        <!-- Main Cost Centres analytic_account_DXB -->
+
+        <record model="account.analytic.account" id="analytic_account_DXB_BVI">
+            <field name="name">DXB Ops (BVI)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base.main_company"></field>
+            <field name="parent_id" ref="analytic_account_DXB"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_DXB_DMCC">
+            <field name="name">DXB Ops (DMCC)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+            <field name="parent_id" ref="analytic_account_DXB"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_DXB_FZE">
+            <field name="name">DXB Ops (FZE)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+            <field name="parent_id" ref="analytic_account_DXB"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_DXB_US">
+            <field name="name">DXB Ops (US)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+            <field name="parent_id" ref="analytic_account_DXB"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_DXB_UK">
+            <field name="name">DXB Ops (UK)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+            <field name="parent_id" ref="analytic_account_DXB"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_DXB_PRIME">
+            <field name="name">DXB Ops (PRIME)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+            <field name="parent_id" ref="analytic_account_DXB"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_DXB_MIKS">
+            <field name="name">DXB Ops (MIKS)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+            <field name="parent_id" ref="analytic_account_DXB"></field>
+        </record>
+
+        <!-- Main Cost Centres analytic_account_OMAN -->
+
+        <record model="account.analytic.account" id="analytic_account_OMAN_BVI">
+            <field name="name">OMAN Ops (BVI)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base.main_company"></field>
+            <field name="parent_id" ref="analytic_account_OMAN"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_OMAN_DMCC">
+            <field name="name">OMAN Ops (DMCC)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+            <field name="parent_id" ref="analytic_account_OMAN"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_OMAN_FZE">
+            <field name="name">OMAN Ops (FZE)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+            <field name="parent_id" ref="analytic_account_OMAN"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_OMAN_US">
+            <field name="name">OMAN Ops (US)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+            <field name="parent_id" ref="analytic_account_OMAN"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_OMAN_UK">
+            <field name="name">OMAN Ops (UK)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+            <field name="parent_id" ref="analytic_account_OMAN"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_OMAN_PRIME">
+            <field name="name">OMAN Ops (PRIME)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+            <field name="parent_id" ref="analytic_account_OMAN"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_OMAN_MIKS">
+            <field name="name">OMAN Ops (MIKS)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+            <field name="parent_id" ref="analytic_account_OMAN"></field>
+        </record>
+
+        <!-- Main Cost Centres analytic_account_KUWAIT -->
+
+        <record model="account.analytic.account" id="analytic_account_KUWAIT_BVI">
+            <field name="name">KUWAIT Ops (BVI)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base.main_company"></field>
+            <field name="parent_id" ref="analytic_account_KUWAIT"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_KUWAIT_DMCC">
+            <field name="name">KUWAIT Ops (DMCC)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+            <field name="parent_id" ref="analytic_account_KUWAIT"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_KUWAIT_FZE">
+            <field name="name">KUWAIT Ops (FZE)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+            <field name="parent_id" ref="analytic_account_KUWAIT"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_KUWAIT_US">
+            <field name="name">KUWAIT Ops (US)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+            <field name="parent_id" ref="analytic_account_KUWAIT"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_KUWAIT_UK">
+            <field name="name">KUWAIT Ops (UK)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+            <field name="parent_id" ref="analytic_account_KUWAIT"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_KUWAIT_PRIME">
+            <field name="name">KUWAIT Ops (PRIME)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+            <field name="parent_id" ref="analytic_account_KUWAIT"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_KUWAIT_MIKS">
+            <field name="name">KUWAIT Ops (MIKS)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+            <field name="parent_id" ref="analytic_account_KUWAIT"></field>
+        </record>
+
+        <!-- Main Cost Centres analytic_account_IRAQ -->
+
+        <record model="account.analytic.account" id="analytic_account_IRAQ_BVI">
+            <field name="name">IRAQ Ops (BVI)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base.main_company"></field>
+            <field name="parent_id" ref="analytic_account_IRAQ"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_IRAQ_DMCC">
+            <field name="name">IRAQ Ops (DMCC)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+            <field name="parent_id" ref="analytic_account_IRAQ"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_IRAQ_FZE">
+            <field name="name">IRAQ Ops (FZE)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+            <field name="parent_id" ref="analytic_account_IRAQ"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_IRAQ_US">
+            <field name="name">IRAQ Ops (US)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+            <field name="parent_id" ref="analytic_account_IRAQ"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_IRAQ_UK">
+            <field name="name">IRAQ Ops (UK)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+            <field name="parent_id" ref="analytic_account_IRAQ"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_IRAQ_PRIME">
+            <field name="name">IRAQ Ops (PRIME)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+            <field name="parent_id" ref="analytic_account_IRAQ"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_IRAQ_MIKS">
+            <field name="name">IRAQ Ops (MIKS)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+            <field name="parent_id" ref="analytic_account_IRAQ"></field>
+        </record>
+
+        <!-- Main Cost Centres analytic_account_QATAR -->
+
+        <record model="account.analytic.account" id="analytic_account_QATAR_BVI">
+            <field name="name">QATAR Ops (BVI)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base.main_company"></field>
+            <field name="parent_id" ref="analytic_account_QATAR"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_QATAR_DMCC">
+            <field name="name">QATAR Ops (DMCC)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+            <field name="parent_id" ref="analytic_account_QATAR"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_QATAR_FZE">
+            <field name="name">QATAR Ops (FZE)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+            <field name="parent_id" ref="analytic_account_QATAR"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_QATAR_US">
+            <field name="name">QATAR Ops (US)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+            <field name="parent_id" ref="analytic_account_QATAR"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_QATAR_UK">
+            <field name="name">QATAR Ops (UK)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+            <field name="parent_id" ref="analytic_account_QATAR"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_QATAR_PRIME">
+            <field name="name">QATAR Ops (PRIME)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+            <field name="parent_id" ref="analytic_account_QATAR"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_QATAR_MIKS">
+            <field name="name">QATAR Ops (MIKS)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+            <field name="parent_id" ref="analytic_account_QATAR"></field>
+        </record>
+
+        <!-- Main Cost Centres analytic_account_SAUDI -->
+
+        <record model="account.analytic.account" id="analytic_account_SAUDI_BVI">
+            <field name="name">SAUDI Ops (BVI)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base.main_company"></field>
+            <field name="parent_id" ref="analytic_account_SAUDI"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_SAUDI_DMCC">
+            <field name="name">SAUDI Ops (DMCC)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+            <field name="parent_id" ref="analytic_account_SAUDI"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_SAUDI_FZE">
+            <field name="name">SAUDI Ops (FZE)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+            <field name="parent_id" ref="analytic_account_SAUDI"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_SAUDI_US">
+            <field name="name">SAUDI Ops (US)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+            <field name="parent_id" ref="analytic_account_SAUDI"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_SAUDI_UK">
+            <field name="name">SAUDI Ops (UK)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+            <field name="parent_id" ref="analytic_account_SAUDI"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_SAUDI_PRIME">
+            <field name="name">SAUDI Ops (PRIME)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+            <field name="parent_id" ref="analytic_account_SAUDI"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_SAUDI_MIKS">
+            <field name="name">SAUDI Ops (MIKS)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+            <field name="parent_id" ref="analytic_account_SAUDI"></field>
+        </record>
+
+        <!-- Main Cost Centres USA -->
+
+        <record model="account.analytic.account" id="analytic_account_US_BVI">
+            <field name="name">US Ops (BVI)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base.main_company"></field>
+            <field name="parent_id" ref="analytic_account_US"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_US_DMCC">
+            <field name="name">US Ops (DMCC)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+            <field name="parent_id" ref="analytic_account_US"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_US_FZE">
+            <field name="name">US Ops (FZE)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+            <field name="parent_id" ref="analytic_account_US"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_US_US">
+            <field name="name">US Ops (US)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+            <field name="parent_id" ref="analytic_account_US"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_US_UK">
+            <field name="name">US Ops (UK)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+            <field name="parent_id" ref="analytic_account_US"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_US_PRIME">
+            <field name="name">US Ops (PRIME)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+            <field name="parent_id" ref="analytic_account_US"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_US_MIKS">
+            <field name="name">US Ops (MIKS)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+            <field name="parent_id" ref="analytic_account_US"></field>
+        </record>
+
+
+        <!-- Main Cost Centres UK -->
+
+        <record model="account.analytic.account" id="analytic_account_UK_BVI">
+            <field name="name">UK Ops (BVI)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base.main_company"></field>
+            <field name="parent_id" ref="analytic_account_UK"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_UK_DMCC">
+            <field name="name">UK Ops (DMCC)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+            <field name="parent_id" ref="analytic_account_UK"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_UK_FZE">
+            <field name="name">UK Ops (FZE)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+            <field name="parent_id" ref="analytic_account_UK"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_UK_US">
+            <field name="name">UK Ops (US)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+            <field name="parent_id" ref="analytic_account_UK"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_UK_UK">
+            <field name="name">UK Ops (UK)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+            <field name="parent_id" ref="analytic_account_UK"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_UK_PRIME">
+            <field name="name">UK Ops (PRIME)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+            <field name="parent_id" ref="analytic_account_UK"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_UK_MIKS">
+            <field name="name">UK Ops (MIKS)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+            <field name="parent_id" ref="analytic_account_UK"></field>
+        </record>
+
+        <!-- Main Cost Centres analytic_account_NIGERIA -->
+
+        <record model="account.analytic.account" id="analytic_account_NIGERIA_BVI">
+            <field name="name">NIGERIA Ops (BVI)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base.main_company"></field>
+            <field name="parent_id" ref="analytic_account_NIGERIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_NIGERIA_DMCC">
+            <field name="name">NIGERIA Ops (DMCC)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+            <field name="parent_id" ref="analytic_account_NIGERIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_NIGERIA_FZE">
+            <field name="name">NIGERIA Ops (FZE)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+            <field name="parent_id" ref="analytic_account_NIGERIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_NIGERIA_US">
+            <field name="name">NIGERIA Ops (US)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+            <field name="parent_id" ref="analytic_account_NIGERIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_NIGERIA_UK">
+            <field name="name">NIGERIA Ops (UK)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+            <field name="parent_id" ref="analytic_account_NIGERIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_NIGERIA_PRIME">
+            <field name="name">NIGERIA Ops (PRIME)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+            <field name="parent_id" ref="analytic_account_NIGERIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_NIGERIA_MIKS">
+            <field name="name">NIGERIA Ops (MIKS)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+            <field name="parent_id" ref="analytic_account_NIGERIA"></field>
+        </record>
+
+        <!-- Main Cost Centres analytic_account_AUH -->
+
+        <record model="account.analytic.account" id="analytic_account_AUH_BVI">
+            <field name="name">AUH Ops (BVI)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base.main_company"></field>
+            <field name="parent_id" ref="analytic_account_AUH"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_AUH_DMCC">
+            <field name="name">AUH Ops (DMCC)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+            <field name="parent_id" ref="analytic_account_AUH"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_AUH_FZE">
+            <field name="name">AUH Ops (FZE)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+            <field name="parent_id" ref="analytic_account_AUH"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_AUH_US">
+            <field name="name">AUH Ops (US)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+            <field name="parent_id" ref="analytic_account_AUH"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_AUH_UK">
+            <field name="name">AUH Ops (UK)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+            <field name="parent_id" ref="analytic_account_AUH"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_AUH_PRIME">
+            <field name="name">AUH Ops (PRIME)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+            <field name="parent_id" ref="analytic_account_AUH"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_AUH_MIKS">
+            <field name="name">AUH Ops (MIKS)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+            <field name="parent_id" ref="analytic_account_AUH"></field>
+        </record>
+
+        <!-- Main Cost Centres analytic_account_MALAYSIA -->
+
+        <record model="account.analytic.account" id="analytic_account_MALAYSIA_BVI">
+            <field name="name">MALAYSIA Ops (BVI)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base.main_company"></field>
+            <field name="parent_id" ref="analytic_account_MALAYSIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_MALAYSIA_DMCC">
+            <field name="name">MALAYSIA Ops (DMCC)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+            <field name="parent_id" ref="analytic_account_MALAYSIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_MALAYSIA_FZE">
+            <field name="name">MALAYSIA Ops (FZE)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+            <field name="parent_id" ref="analytic_account_MALAYSIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_MALAYSIA_US">
+            <field name="name">MALAYSIA Ops (US)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+            <field name="parent_id" ref="analytic_account_MALAYSIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_MALAYSIA_UK">
+            <field name="name">MALAYSIA Ops (UK)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+            <field name="parent_id" ref="analytic_account_MALAYSIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_MALAYSIA_PRIME">
+            <field name="name">MALAYSIA Ops (PRIME)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+            <field name="parent_id" ref="analytic_account_MALAYSIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_MALAYSIA_MIKS">
+            <field name="name">MALAYSIA Ops (MIKS)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+            <field name="parent_id" ref="analytic_account_MALAYSIA"></field>
+        </record>
+
+        <!-- Main Cost Centres analytic_account_RUSSIA -->
+
+        <record model="account.analytic.account" id="analytic_account_RUSSIA_BVI">
+            <field name="name">RUSSIA Ops (BVI)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base.main_company"></field>
+            <field name="parent_id" ref="analytic_account_RUSSIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_RUSSIA_DMCC">
+            <field name="name">RUSSIA Ops (DMCC)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_dmcc"></field>
+            <field name="parent_id" ref="analytic_account_RUSSIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_RUSSIA_FZE">
+            <field name="name">RUSSIA Ops (FZE)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_fze_sharja"></field>
+            <field name="parent_id" ref="analytic_account_RUSSIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_RUSSIA_US">
+            <field name="name">RUSSIA Ops (US)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_us"></field>
+            <field name="parent_id" ref="analytic_account_RUSSIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_RUSSIA_UK">
+            <field name="name">RUSSIA Ops (UK)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_ltd_uk"></field>
+            <field name="parent_id" ref="analytic_account_RUSSIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_RUSSIA_PRIME">
+            <field name="name">RUSSIA Ops (PRIME)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_ru"></field>
+            <field name="parent_id" ref="analytic_account_RUSSIA"></field>
+        </record>
+        <record model="account.analytic.account" id="analytic_account_RUSSIA_MIKS">
+            <field name="name">RUSSIA Ops (MIKS)</field>
+            <field name="type">normal</field>
+            <field name="company_id" ref="base_tgt.res_company_llc_miks"></field>
+            <field name="parent_id" ref="analytic_account_RUSSIA"></field>
+        </record>
+
+
+
+    </data>
+</openerp>

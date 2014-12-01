@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record id="board_tgt2_form" model="ir.ui.view">
+        <field name="name">board.tgt2.form</field>
+        <field name="model">board.board</field>
+        <field name="arch" type="xml">
+            <form string="TGT Sales Analysis"  version="7.0">
+                <board style="2-1">
+                    <column/>
+                    <column/>
+                </board>
+            </form>
+        </field>
+    </record>
+
+    <record id="open_board_tgt2" model="ir.actions.act_window">
+        <field name="name">TGT Sales</field>
+        <field name="res_model">board.board</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="usage">menu</field>
+        <field name="view_id" ref="board_tgt2_form"/>
+            <field name="help" type="html">
+              <div class="oe_empty_custom_dashboard">
+                  <p>
+                    <b>Sales dashboard is empty.</b>
+                  </p><p>
+                    To add your first report into this dashboard, go to any
+                    menu, switch to list or graph view, and click <i>'Add to
+                    Dashboard'</i> in the extended search options.
+                  </p><p>
+                    You can filter and group data before inserting into the
+                    dashboard using the search options.
+                  </p>
+              </div>
+            </field>
+    </record>
+    <menuitem id="menu_tgt2_dashboard" 
+              parent="base.menu_reporting_dashboard" 
+              action="open_board_tgt2" 
+              sequence="50"/>
+    <menuitem id="menu_tgt2_reporting" 
+              parent="base.menu_reporting" 
+              name="TGT Sales" 
+              sequence="40" />
+
+    <record id="board_rotator_sales_analysis_view_tree" model="ir.ui.view">
+        <field name="name">rotator.sale.analysis.tree</field>
+        <field name="model">rotator.sale.analysis</field>
+        <field name="arch" type="xml">
+            <tree version="7.0" string="Rotator Sales Analysis">
+                <field name="employee_id"></field>
+                <field name="jan"></field>
+                <field name="feb"></field>
+                <field name="mar"></field>
+                <field name="apr"></field>
+                <field name="may"></field>
+                <field name="jun"></field>
+                <field name="jul"></field>
+                <field name="aug"></field>
+                <field name="sep"></field>
+                <field name="oct"></field>
+                <field name="nov"></field>
+                <field name="des"></field>
+                <field name="total"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_rotator_sale_summary">
+        <field name="name">Rotator Sale Analysis</field>
+        <field name="res_model">rotator.sale.analysis</field>
+        <field name="view_type">tree</field>
+        <field name="view_mode">tree,graph</field>
+        <field name="view_id" eval="False" />
+        <field name="context">{}</field>
+        <field name="domain">[]</field>
+    </record>
+
+
+
+    <record id="board_rotator_sales_analysis_view_tree2" model="ir.ui.view">
+        <field name="name">rotator.sale.analysis.empty.tree</field>
+        <field name="model">rotator.sale.analysis.empty</field>
+        <field name="arch" type="xml">
+            <tree version="7.0" string="Rotator Sales Analysis (Without Rotators)">
+                <field name="company_id"></field>
+                <field name="jan"></field>
+                <field name="feb"></field>
+                <field name="mar"></field>
+                <field name="apr"></field>
+                <field name="may"></field>
+                <field name="jun"></field>
+                <field name="jul"></field>
+                <field name="aug"></field>
+                <field name="sep"></field>
+                <field name="oct"></field>
+                <field name="nov"></field>
+                <field name="des"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_rotator_sale_summary2">
+        <field name="name">Sale Analysis (Without Rotator)</field>
+        <field name="res_model">rotator.sale.analysis.empty</field>
+        <field name="view_type">tree</field>
+        <field name="view_mode">tree,graph</field>
+        <field name="view_id" eval="False" />
+        <field name="context">{}</field>
+        <field name="domain">[]</field>
+    </record>
+
+
+
+    <record id="board_asset_utilization_analysis_view_tree2" model="ir.ui.view">
+        <field name="name">asset.utilization.analysis.empty.tree</field>
+        <field name="model">asset.utilization.analysis.empty</field>
+        <field name="arch" type="xml">
+            <tree version="7.0" string="Sales Analysis (Without Assets)">
+                <field name="company_id"></field>
+                <field name="jan"></field>
+                <field name="feb"></field>
+                <field name="mar"></field>
+                <field name="apr"></field>
+                <field name="may"></field>
+                <field name="jun"></field>
+                <field name="jul"></field>
+                <field name="aug"></field>
+                <field name="sep"></field>
+                <field name="oct"></field>
+                <field name="nov"></field>
+                <field name="des"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_asset_sale_summary2">
+        <field name="name">Sale Analysis (Without Asset)</field>
+        <field name="res_model">asset.utilization.analysis.empty</field>
+        <field name="view_type">tree</field>
+        <field name="view_mode">tree,graph</field>
+        <field name="view_id" eval="False" />
+        <field name="context">{}</field>
+        <field name="domain">[]</field>
+    </record>
+
+
+ <record id="board_asset_utilization_analysis_view_tree" model="ir.ui.view">
+        <field name="name">asset.utilization.analysis.tree</field>
+        <field name="model">asset.utilization.analysis</field>
+        <field name="arch" type="xml">
+            <tree version="7.0" string="Asset Utilization">
+                <field name="asset_id"></field>
+                <field name="jan"></field>
+                <field name="feb"></field>
+                <field name="mar"></field>
+                <field name="apr"></field>
+                <field name="may"></field>
+                <field name="jun"></field>
+                <field name="jul"></field>
+                <field name="aug"></field>
+                <field name="sep"></field>
+                <field name="oct"></field>
+                <field name="nov"></field>
+                <field name="des"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_asset_sale_summary">
+        <field name="name">Asset Utilization</field>
+        <field name="res_model">asset.utilization.analysis</field>
+        <field name="view_type">tree</field>
+        <field name="view_mode">tree,graph</field>
+        <field name="view_id" eval="False" />
+        <field name="context">{}</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <record id="board_rotator_sale_cache_tree" model="ir.ui.view">
+        <field name="name">rotator.sale.analysis.tree</field>
+        <field name="model">board.board</field>
+        <field name="inherit_id" ref="base_tgt.board_tgt2_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/board/column[1]" position="inside">
+                <action name="%(action_rotator_sale_summary)d" string="Rotator Sales Analysis"/>
+                <action name="%(action_rotator_sale_summary2)d" string="Sales Analysis (SO without Rotators)"/>
+                <action name="%(action_asset_sale_summary)d" string="Asset Utilization"/>
+                <action name="%(action_asset_sale_summary2)d" string="Sales Analysis (SO without Assets)"/>
+            </xpath>
+        </field>
+    </record>
+
+    
+
+</data>
+</openerp>

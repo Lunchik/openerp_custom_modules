@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+        <record id="base.action_partner_form" model="ir.actions.act_window">
+            <field name="context">{"search_default_customer":1,"search_default_type_company":1}</field>
+        </record>
+        <record id="product.product_normal_action" model="ir.actions.act_window">
+            <field name="context">{"group_by":
+                "categ_id"}</field>
+        </record>
+        <record id="product.product_normal_action_sell" model="ir.actions.act_window">
+            <field name="context">{"group_by":
+                "categ_id","search_default_filter_to_sell":1}</field>
+        </record>
+    </data>
+</openerp>

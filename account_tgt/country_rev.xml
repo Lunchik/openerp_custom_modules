@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <!-- Form view of Employee Category -->
+        <record id="loc_re_form_view" model="ir.ui.view">
+            <field name="name">loc.re.form.view</field>
+            <field name="model">location.rev</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Target Revenue">
+                    <field name="country_id"/>
+                    <field name="tar_mo"/>
+                    <field name="mon"/>
+                    <field name="year"/>
+
+                </form>
+            </field>
+        </record>
+        
+        <!-- Form view of Employee Category -->
+        <record id="loc_re_tree_view" model="ir.ui.view">
+            <field name="name">loc.re.tree.view</field>
+            <field name="model">location.rev</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Target Revenue">
+                    <field name="country_id"/>
+                    <field name="tar_mo"/>
+                    <field name="mon"/>
+                    <field name="year"/>
+
+
+
+                </tree>
+            </field>
+        </record>
+        
+        <record id="action_loc" model="ir.actions.act_window">
+            <field name="name">Target Revenue by Location</field>
+            <field name="res_model">location.rev</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_loc_per" name='Targets' parent="account.menu_finance_configuration"/>
+        <menuitem id="menu_loc" action="action_loc" parent="menu_loc_per"/>
+
+
+    </data>
+    </openerp>

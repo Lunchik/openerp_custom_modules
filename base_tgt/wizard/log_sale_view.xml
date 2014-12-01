@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="view_tgt_sales_Revenue_report" model="ir.ui.view">
+            <field name="name">tgt.sales.revenue.report.form</field>
+            <field name="model">tgt.sales.revenue.report</field>
+            <field name="arch" type="xml">
+                <form string="Sales Revenue " version="7.0">
+                    <sheet>
+                        <group>
+                        <field name="filter_id" />
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button string="Print report" class="oe_highlight" type="object" name="print_report"></button>
+                        <button special="cancel" string="cancel"></button>
+                    </footer>
+                    
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_tgt_sales_Revenue_report">
+            <field name="name">Sales Revenue XLS</field>
+            <field name="res_model">tgt.sales.revenue.report</field>
+            <field name="src_model">tgt.sales.revenue.report</field>
+            <field name="view_type">form</field>
+            <field name="target">new</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" ref="view_tgt_sales_Revenue_report"></field>
+            
+        </record>
+<!--  security  -->
+
+        <menuitem id="menu_tgt_sales_Revenue_report"
+        action="action_tgt_sales_Revenue_report" parent="menu_base_sales_analysis"
+        sequence="12" />
+    </data>
+</openerp>

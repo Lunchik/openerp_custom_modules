@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="product.product_normal_action" model="ir.actions.act_window">
+            <field name="context">{"search_filter_all":1}</field>
+        </record>
+        <record id="product_tgt_search_form_view" model="ir.ui.view">
+            <field name="name">product.search.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_search_form_view"></field>
+            <field name="arch" type="xml">
+                   <filter string="Type" position="attributes">
+                       <attribute name="invisible">1</attribute>
+                   </filter>
+                   <filter string="Consumable" position="attributes">
+                       <attribute name="invisible">1</attribute>
+                   </filter>
+                   <filter string="Services" position="attributes">
+                       <attribute name="invisible">1</attribute>
+                   </filter>
+                   <filter name="filter_to_sell" position="attributes">
+                       <attribute name="invisible">1</attribute>
+                   </filter>
+                   <filter string="Default Unit of Measure" position="attributes">
+                       <attribute name="invisible">1</attribute>
+                   </filter>
+                   <filter string="Services" position="after">
+
+                       <filter string="TGT Default Services" name="all" icon="terp-accessories-archiver" domain="[('categ_id.name','in',['Lost In Hole','Other Charges','Well Flow Performance'])]" help="All non-extra services"/>
+
+                       <filter string="TGT Other Charges" name="extra" icon="terp-accessories-archiver" domain="[('categ_id.name','=','Other Charges')]" help="Cancelation, Mob/DeMob, etc..."/>
+
+                       <filter string="Well Integrity" name="services" icon="terp-accessories-archiver" domain="[('categ_id.name','=','Well Integrity')]" help="SNL - Leak, etc...."/>
+
+                       <filter string="Well Flow Performance" name="tools" icon="terp-accessories-archiver" domain="[('categ_id.name','=','Well Flow Performance')]" help="SNL, HPLT, etc..."/>
+
+                       <filter string="Lost In Hole" name="component" icon="terp-accessories-archiver" domain="[('categ_id.name','=','Lost In Hole')]" help="Conveyance, H2S, etc..."/>
+
+                       
+
+                       
+
+                       
+                   </filter>
+                   
+            </field>
+        </record>
+
+        <record id="product_tgt_form_view" model="ir.ui.view">
+            <field name="name">product.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"></field>
+            <field name="arch" type="xml">
+                 <field name='categ_id' position="after">
+                        <label for="job_cat" class="oe_edit_only"/>
+
+                        <field name="job_cat"/>
+                        
+                    
+                 </field>
+            </field>
+            </record>
+            
+        <record id="view_product_tgt_pricelist_form" model="ir.ui.view">
+            <field name="name">product_tgt.pricelist.form</field>
+            <field name="model">product_tgt.pricelist</field>
+            <field name="arch" type="xml">
+                    <form version="7.0" string="Pricelist">
+                        <sheet>
+                            <group>
+                                <group>
+                                    <field name="name"></field>
+                                    <field name="company_id"></field>
+                                </group>
+                                <group>
+                                    <field name="active"></field>
+                                    <field name="default"></field>
+                                </group>
+                            </group>
+                            <field name="rule_ids">
+                                <form version="7.0" string="Pricelist Rules">
+                                    <sheet>
+                                        <group>
+                                            <group>
+                                                <field name="name"></field>
+                                                <field name="charge_type"></field>
+                                                
+                                            </group>
+                                            <group>
+                                                <field name="version"></field>
+                                                <field name="land_offshore"></field>
+                                                
+                                                
+                                            </group>
+                                        </group>
+                                        <h3 class="oe_title">Pricelist Rules</h3>
+                                        <field name="charge_ids">
+                                            <form string="Charges" version="7.0">
+                                                <sheet>
+                                                    <group>
+                                                        <group>
+                                                            <field name="product_id" context="{'search_default_all':1}">
+                                                                
+                                                            </field>
+                                                            <field name="pricelist_rule_id"></field>
+                                                        </group>
+                                                        <group>
+                                                            <field name="product_uom"></field>
+                                                            <field name="price_unit"></field>
+                                                        </group>
+                                                    </group>
+                                                </sheet>
+                                            </form>
+                                            <tree version="7.0" string="Charges" editable="bottom">
+                                                <field on_change="product_id_change(product_id)" context="{'search_default_filter_all':'company_id','search_default_filter_to_sell':1}" name="product_id">
+                                                    <filter string='Category' icon="terp-stock_symbol-selection" domain="[]" context="{'group_by' : 'categ_id'}"/>
+                                                </field>
+                                                
+                                                <field name="product_uom"></field>
+                                                <field required="1" name="price_unit"></field>
+                                            </tree>
+                                        </field>
+                                    </sheet>
+                                </form>
+                                <tree version="7.0" string="Rules">
+                                    <field name="name"></field>
+                                    <field name="charge_type"></field>
+                                    <field name="land_offshore"></field>
+                                    <field name="version"></field>
+                                </tree>
+                            </field>
+                        </sheet>
+                    </form>
+            </field>
+        </record>
+
+        <record id="view_product_tgt_pricelist_tree" model="ir.ui.view">
+            <field name="name">product_tgt.pricelist.tree</field>
+            <field name="model">product_tgt.pricelist</field>
+            <field name="sequence" eval="1"></field>
+            
+            <field name="arch" type="xml">
+                <tree version="7.0" string="Pricelists">
+                    <field name="name"></field>
+                    <field name="company_id"></field>
+                    <field name="active"></field>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_pricelist" model="ir.actions.act_window">
+            <field name="name">Pricelist</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product_tgt.pricelist</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a pricelist that can be applied saleorder
+              </p>
+              
+            </field>
+        </record>
+
+        <menuitem action="action_pricelist" id="menu_tgt_pricelist" parent="base.menu_sales" sequence="5" groups="base.group_sale_salesman,base.group_sale_manager"/>
+    </data>
+</openerp>

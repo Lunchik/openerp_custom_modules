@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="purchase_order_form_edit" model="ir.ui.view">
+            <field name="name">purchase.order.form.edit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <field name="company_id" position="attributes">
+                    <attribute name="string">TGT Entity</attribute>
+                </field>
+                <field name="currency_id" position="attributes">
+                    <attribute name="invisible" eval="0"></attribute>
+                    <attribute name="widget">selection</attribute>
+                    <attribute name="readonly">0</attribute>
+                </field>
+                <xpath expr="//notebook/page/field[@name=
+                'order_line']/tree/field[@name='product_id']"
+                   position="attributes" version="7.0">
+                   <attribute name="invisible">1</attribute>
+               </xpath>
+               <xpath expr="//notebook/page/field[@name=
+                'order_line']/tree/field[@name='account_analytic_id']"
+                   position="before" version="7.0">
+                   <field name="expense_account_id" required="1" domain="[('company_id', '=', parent.company_id),('type','!=','view')]"></field>
+               </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

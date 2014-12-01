@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <!-- Working Sheet -->
+        <record id="view_payslip_report_form" model="ir.ui.view">
+            <field name="name">tgt.payslip.report.form</field>
+            <field name="model">tgt.payslip.report</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form version="7.0" string="Payslips Report">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date_from"></field>
+                                <field name="r_file" filename="name"></field>
+                            </group>
+                            <group>
+                                <field name="date_to"></field>
+                                <field name="name" invisible="1"></field>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button icon="STOCK_PRINT" name="print_report" type="object" class="oe_highlight" string="Print Payslips" invisible="'r_file' in context"></button>
+                        <button name="cancel" type="object" string="Close" special="cancel"></button>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_view_tgt_payslip_report_form" model="ir.actions.act_window">
+            <field name="name">Payslip Summary Report</field>
+            <field name="res_model">tgt.payslip.report</field>
+            <field name="target">new</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_payslip_report_form"/>
+        </record>
+
+        <menuitem id="menu_tgt_payslip_report" parent="hr_payroll.menu_hr_root_payroll" action="action_view_tgt_payslip_report_form" name="Payslip Summary Report" sequence="8" groups="base.group_hr_manager_tgt,base.group_hr_manager_tgt,base.group_hr_superuser_tgt" />
+    </data>
+</openerp>

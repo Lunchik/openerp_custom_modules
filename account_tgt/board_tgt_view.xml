@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record id="board_tgt_form" model="ir.ui.view">
+        <field name="name">board.tgt.form</field>
+        <field name="model">board.board</field>
+        <field name="arch" type="xml">
+            <form string="TGT Financial Report"  version="7.0">
+                <board style="2-1">
+                    <column/>
+                    <column/>
+                </board>
+            </form>
+        </field>
+    </record>
+
+    <record id="open_board_tgt" model="ir.actions.act_window">
+        <field name="name">TGT Dashboard</field>
+        <field name="res_model">board.board</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="usage">menu</field>
+        <field name="view_id" ref="board_tgt_form"/>
+            <field name="help" type="html">
+              <div class="oe_empty_custom_dashboard">
+                  <p>
+                    <b>Financial dashboard is empty.</b>
+                  </p><p>
+                    To add your first report into this dashboard, go to any
+                    menu, switch to list or graph view, and click <i>'Add to
+                    Dashboard'</i> in the extended search options.
+                  </p><p>
+                    You can filter and group data before inserting into the
+                    dashboard using the search options.
+                  </p>
+              </div>
+            </field>
+    </record>
+    <menuitem id="menu_tgt_dashboard" 
+              parent="base.menu_reporting_dashboard" 
+              action="open_board_tgt" 
+              sequence="50"/>
+    <menuitem id="menu_tgt_reporting" 
+              parent="base.menu_reporting" 
+              name="TGT Dashboard" 
+              sequence="40" />
+
+    <record id="board_ar_aging_cache_view_tree" model="ir.ui.view">
+        <field name="name">ar.aging.cache.tree</field>
+        <field name="model">ar.aging.cache.db</field>
+        <field name="arch" type="xml">
+            <tree version="7.0" string="AR Aging Summary">
+                <field name="partner"></field>
+                <field name="country"></field>
+                <field name="currency_id"></field>
+
+                <field name="a0_30"></field>
+                <field name="a31_60"></field>
+                <field name="a61_90"></field>
+                <field name="a91_120"></field>
+                <field name="a121_150"></field>
+                <field name="a151_365"></field>
+                <field name="a366_547"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_ar_aging_summary">
+        <field name="name">AR Aging Summary</field>
+        <field name="res_model">ar.aging.cache.db</field>
+        <field name="view_type">tree</field>
+        <field name="view_mode">tree,graph</field>
+        <field name="view_id" eval="False" />
+        <field name="context">{}</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <record id="board_ar_aging_cache_tree" model="ir.ui.view">
+        <field name="name">ar.aging.cache.tree</field>
+        <field name="model">board.board</field>
+        <field name="inherit_id" ref="account_tgt.board_tgt_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/board/column[1]" position="inside">
+                <action name="%(action_ar_aging_summary)d" string="AR Aging Report"/>
+            </xpath>
+        </field>
+    </record>
+
+
+
+</data>
+</openerp>

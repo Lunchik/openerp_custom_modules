@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Incoming/Outgoing Mail Settings -->
+        <record id="incoming_mail_server" model="fetchmail.server">
+            <field name="name">pop.tgtoil.com</field>
+            <field name="type">pop</field>
+            <field name="server">pop.tgtoil.com</field>
+            <field name="port" eval="110"></field>
+            <field name="user">tgterp@tgtoil.com</field>
+            <field name="password">PWoHQ(D7</field>
+            <field name="priority" eval="1"></field>
+            <field name="original" eval="True"></field>
+            <field name="attach" eval="True"></field>
+            <field name="active" eval="True"></field>
+            <field name="company_id" ref="base.main_company"></field>
+        </record>
+
+        <!-- Incoming/Outgoing Mail Settings -->
+        <record id="outgoing_mail_server" model="ir.mail_server">
+            <field name="name">smtp.tgtoil.com</field>
+            <field name="smtp_host">smtp.tgtoil.com</field>
+            <field name="smtp_port" eval="25"></field>
+            <field name="smtp_encryption">starttls</field>
+            <field name="smtp_user">tgterp@tgtoil.com</field>
+            <field name="smtp_pass">PWoHQ(D7</field>
+            <field name="sequence" eval="1"></field>
+            <field name="company_id" ref="base.main_company"></field>
+        </record>
+    </data>
+</openerp>

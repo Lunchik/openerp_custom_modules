@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+     <data>
+<menuitem
+                icon="STOCK_PRINT"
+                name="Revenue vs. Target reports"
+                parent="base_tgt.menu_base_sales_analysis"
+                
+                id="menu_re_ta_xcel"
+               />
+
+        <record id="ar_mtm_report" model="ir.ui.view">
+            <field name="name">Revenue Per Country MTM Vs Target XCEL</field>
+            <field name="model">cou_re</field>
+            <field name="arch" type="xml">
+                <form string="Revenue Per Country MTM Vs Target" version="7.0">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="mon" required='1'></field>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button type="object" string="Print Report" name="print_report" class="oe_highlight"></button>
+                        <button string="cancel" special="cancel"></button>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_mtm_xcel_menu" model="ir.actions.act_window">
+            <field name="name">Revenue Per Country MTM Vs Target XCEL</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cou_re</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+                icon="STOCK_PRINT"
+                name="Revenue Per Country MTM Vs Target XCEL"
+                parent="menu_re_ta_xcel"
+                action="action_mtm_xcel_menu"
+                id="menu_ar_mtm_xcel"
+               />
+
+
+
+
+<record id="ar_ytd_report" model="ir.ui.view">
+            <field name="name">Revenue Per Country YTD Vs Target XCEL</field>
+            <field name="model">cou_re_y</field>
+            <field name="arch" type="xml">
+                <form string="Revenue Per Country YTD Vs Target" version="7.0">
+                    <sheet>
+                        <group>
+                            <group>
+                   
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button type="object" string="Print Report" name="print_report" class="oe_highlight"></button>
+                        <button string="cancel" special="cancel"></button>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_ytd_xcel_menu" model="ir.actions.act_window">
+            <field name="name">Revenue Per Country YTD Vs Target XCEL</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cou_re_y</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+                icon="STOCK_PRINT"
+                name="Revenue Per Country YTD Vs Target XCEL"
+                parent="menu_re_ta_xcel"
+                action="action_ytd_xcel_menu"
+                id="menu_ar_ytd_xcel"
+               />
+
+
+
+    </data>
+</openerp>

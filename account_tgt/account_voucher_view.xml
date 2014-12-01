@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_vendor_payment_form1" model="ir.ui.view">
+            <field name="name">account.voucher.payment.low.priority.form1</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_vendor_payment_form"></field>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@string='Payment Information']/field[@name='line_dr_ids']/tree/field[@name='move_line_id']" position="attributes" version="7.0">
+                <attribute name="domain">[('company_id', '=', parent.company_id)]</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@string='Payment Information']/field[@name='line_dr_ids']/tree/field[@name='account_id']" position="attributes" version="7.0">
+                <attribute name="domain">[('company_id', '=', parent.company_id),('type','=','payable')]</attribute>
+                </xpath>
+
+                <field name="writeoff_acc_id" position="attributes">
+                    <attribute name="domain">[('type','=','other'),('company_id','=',company_id)]</attribute>
+                </field>
+                <field name="analytic_id" position="attributes">
+                    <attribute name="domain">[('type','=','normal'),('company_id','=',company_id)]</attribute>
+                </field>
+
+            </field>
+        </record>
+
+        <record id="view_vendor_receipt_form1" model="ir.ui.view">
+            <field name="name">account.voucher.payment.form1</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_vendor_receipt_form"></field>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@string='Payment Information']/field[@name='line_cr_ids']/tree/field[@name='move_line_id']" position="attributes" version="7.0">
+                <attribute name="domain">[('company_id', '=', parent.company_id)]</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@string='Payment Information']/field[@name='line_cr_ids']/tree/field[@name='account_id']" position="attributes" version="7.0">
+                    <attribute name="domain">[('company_id', '=', parent.company_id),('type','=','payable')]</attribute>
+                </xpath>
+
+                <field name="writeoff_acc_id" position="attributes">
+                    <attribute name="domain">[('type','=','other'),('company_id','=',company_id)]</attribute>
+                </field>
+                <field name="analytic_id" position="attributes">
+                    <attribute name="domain">[('type','=','normal'),('company_id','=',company_id)]</attribute>
+                </field>
+
+            </field>
+        </record>
+
+    </data>
+</openerp>

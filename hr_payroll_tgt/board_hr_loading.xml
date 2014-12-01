@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="board_hr_loading_month_report_tree" model="ir.ui.view">
+        <field name="name">hr.loading.month.report.tree</field>
+        <field name="model">hr.loading.month.report</field>
+        <field name="arch" type="xml">
+            <tree version="7.0" string="hr loading month ">
+                <field name="employee_id"></field>
+                <field name="land1"></field>
+                <field name="sea1"></field>
+                <field name="base1"></field>
+                <field name="dayoff1"></field>
+                <field name="vacation1"></field>
+
+                <field name="land2"></field>
+                <field name="sea2"></field>
+                <field name="base2"></field>
+                <field name="dayoff2"></field>
+                <field name="vacation2"></field>
+
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_loading_month_report">
+        <field name="name">>hr loading month</field>
+        <field name="res_model">hr.loading.month.report</field>
+        <field name="view_type">tree</field>
+        <field name="view_mode">tree,graph</field>
+        <field name="view_id" eval="False" />
+        <field name="context">{}</field>
+        <field name="domain">[]</field>
+    </record>
+
+
+
+    <record id="board_tgt_hr_loading" model="ir.actions.act_window">
+        <field name="name">hr loading Dashboard</field>
+        <field name="res_model">board.board</field>
+        <field name="view_type">tree</field>
+        <field name="view_mode">tree</field>
+        <field name="usage">menu</field>
+        <field name="view_id" ref="action_hr_loading_month_report"/>
+            <field name="help" type="html">
+              <div class="oe_empty_custom_dashboard">
+                  <p>
+                    <b>hr loading dashboard is empty.</b>
+                  
+                  </p>
+              </div>
+            </field>
+    </record>
+    <menuitem id="menu_board_tgt_hr_loading" 
+              parent="base.menu_reporting" 
+              name= " hr loading"
+              sequence="50"/>
+
+     <menuitem id="menu_board_tgt_hr_loadingact" 
+              parent="menu_board_tgt_hr_loading" 
+              action="board_tgt_hr_loading" 
+              name= " hr loading"
+              sequence="40"/>
+    </data>
+</openerp>

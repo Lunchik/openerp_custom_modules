@@ -1,0 +1,398 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="view_product_tgt_pricelist_form9" model="ir.ui.view">
+            <field name="name">product_tgt.pricelist.form.i</field>
+            <field name="model">product_tgt.pricelist</field>
+            <field name="inherit_id" ref="product_tgt.view_product_tgt_pricelist_form"/>
+            <field name="arch" type="xml">
+                <field name="default" position="after">
+                    <field name="contract_id"></field>
+                </field>
+            </field>
+        </record>
+        
+
+
+        <record id="account_analytic_account_remove_form" model="ir.ui.view">
+            <field name="name">account.analytic.account.invoice.form.inherit</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="account_analytic_analysis.account_analytic_account_form_form"/>
+            <field eval="40" name="priority"/>
+            <field name="arch" type="xml">
+                <field name="company_id" position="attributes">
+                    <attribute name="string">TGT Entity</attribute>
+                </field>
+            </field>
+        </record>
+
+
+        <!-- CRM Lead Tree View -->
+        <record model="ir.ui.view" id="crm_case_tree_view_leads_contract">
+            <field name="name">Leads</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+            <field name="arch" type="xml">
+                <field name="user_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="section_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <label for="section_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </label>
+                <field name="categ_ids" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+
+                <page string="Lead" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </page>
+                <page string="Internal Notes" position="before">
+                        <page string="Contract Information">
+                            <group>
+                                    
+                                <group>
+                                    <field name="field_name" />
+                                    <field name="well_name"/>
+                                    <field name="temprature"/>
+                                </group>
+                                <group>
+                                    <field name="conveyance"/>
+                                    <field name="land"/>
+                                    <field name="tempreture_uom"/>
+
+                                    <field required="1" name="well_deviation"/>
+                                </group>
+                            </group>
+
+                        </page>
+                </page>
+            </field>
+        </record>
+        
+        
+
+<!-- Sales Quotation -->
+        <record id="view_order_company_form" model="ir.ui.view">
+            <field name="name">sale.order.company_id.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_crm.sale_view_inherit123"></field>
+            <field name="arch" type="xml">
+    <!-- Sales security button -->
+<xpath expr="//button[@string='Create Invoice']" position="replace">
+ <button name="%(sale.action_view_sale_advance_payment_inv)d" string="Create Invoice"
+                            type="action" states="manual" class="oe_highlight" groups="base.group_sales_manager_tgt,base.group_sales_superuser_tgt"/>
+                         </xpath>
+
+         <xpath expr="//button[@name='invoice_recreate']" position="replace">
+          <button name="invoice_recreate" states="invoice_except" string="Recreate Invoice" groups="base.group_sales_manager_tgt,base.group_sales_superuser_tgt"/>
+                         </xpath>
+
+         <xpath expr="//button[@name='invoice_corrected']" position="replace">
+          <button name="invoice_corrected" states="invoice_except" string="Ignore Exception" groups="base.group_sales_manager_tgt,base.group_sales_superuser_tgt"/>
+                         </xpath>
+          
+        <xpath expr="//button[@name='action_button_confirm']" position="replace">
+            <button name="action_button_confirm" states="draft" string="Confirm Sale" type="object" groups="base.group_sales_superuser_tgt,base.group_sales_supervisor_tgt,base.group_sales_manager_tgt"/>
+          </xpath>
+
+        <xpath expr="//button[@name='action_button_confirm']" position="replace">
+            <button name="action_button_confirm" states="sent" string="Confirm Sale" class="oe_highlight" type="object" groups="base.group_sales_superuser_tgt,base.group_sales_supervisor_tgt,base.group_sales_manager_tgt"/>
+            </xpath>
+        <xpath expr="//button[@name='action_view_invoice']" position="replace">
+                 <button name="action_view_invoice" string="View Invoice" type="object" class="oe_highlight" attrs="{'invisible': [('invoice_exists', '=', False)]}" groups="base.group_sales_manager_tgt,base.group_sales_superuser_tgt"/>
+                       
+                              </xpath>
+
+        <xpath expr="//button[@name='action_cancel']" position="replace">
+            <button name="action_cancel" states="manual,progress" string="Cancel Order" type="object" groups="base.group_sales_superuser_tgt"/>
+                          </xpath>
+
+        <xpath expr="//button[@name='invoice_cancel']" position="replace">
+            <button name="invoice_cancel" states="invoice_except" string="Cancel Order" groups="base.group_sales_superuser_tgt"/>
+                          </xpath>
+    <!-- end Sales security button -->  
+    
+                <xpath expr="//field[@name='project_id']" position="before" version="7.0">
+                    <field name="contract_id" on_change="on_change_contract_id(contract_id)" required="1"></field>
+                </xpath>
+                <xpath expr="//field[@name='company_id']" position="replace" version="7.0">
+                </xpath>
+                <xpath expr="//field[@name='origin']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='categ_ids']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='invoiced']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                
+                
+                <field name="project_id" position="after">
+                    <field name="company_id" widget="selection" groups="base.group_multi_company" readonly="1" on_change="onchange_company_id(company_id)" />
+
+                    <field name="income_account_id" widget="selection" readonly="1"></field>
+                    <field name="tax_id"></field>
+                </field>
+                <field name="project_id" position="after">
+                    <field name="enduser_id" required="1" />
+                </field>
+                <field name="project_id" position="attributes">
+                    <attribute name="domain">[('company_id','=',company_id)]</attribute>
+                </field>
+
+                <field name="partner_id" position="attributes">
+                    <attribute name="domain">[('customer', '=', True), ('is_company', '=', True)]</attribute>
+                </field>
+                <field name="currency_id" position="replace">
+                    <field name="currency_id"></field>
+                </field>
+                
+                <field name="section_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="fiscal_position" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+
+                <field name="pricelist_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="pricelist_id" position="after">
+                    <field name="tgt_pricelist_id" domain="[('active','=',True)]" on_change="onchange_tgt_plist_id(tgt_pricelist_id)"></field>
+                </field>
+
+                <page string="Order Lines" position="before">
+                    <page string="Contract Information" groups="base.group_sale_salesman">
+                            <group>
+                                <group>
+                                    <field name="charge_type" groups="base.group_sale_salesman" />
+                                    <field name="field_name" groups="base.group_sale_salesman" />
+                                    <field name="well_name" groups="base.group_sale_salesman" />
+                                    <field name="temprature" groups="base.group_sale_salesman"/>
+                                    
+                                </group>
+                            
+                                <group>
+                                    <field name="well_deviation" groups="base.group_sale_salesman"/>
+                                    <field name="conveyance" groups="base.group_sale_salesman" />
+                                    <field name="land" groups="base.group_sale_salesman"/>
+                                    <field name="temprature_uom" groups="base.group_sale_salesman"/>
+                                </group>
+                            </group>
+                        </page>
+                </page>
+                <page string="Other Information" position="before">
+                    <page string="Resources Information" groups="base.group_sale_salesman">
+                        <group string="Logging Engineers">
+                            <field nolabel="1" name="employee_ids" domain="[('is_rotator','=',True)]"></field>
+                        </group>
+                        <group string="Tools Used">
+                            <field nolabel="1" name="asset_ids" domain="[('company_id','=',company_id)]">
+                                <tree string="Tools">
+                                    <field name="name"></field>
+                                    <field name="code"></field>
+                                    <field name="company_id"></field>
+                                    <field name="state"></field>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </page>
+                
+            </field>
+        </record>
+
+
+
+        <record id="view_order_company_form_stock" model="ir.ui.view">
+            <field name="name">sale.order.company_id.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_stock.view_order_form_inherit"></field>
+            <field name="arch" type="xml">
+                <field name="incoterm" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="picking_policy" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="order_policy" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                
+                <field name="shipped" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="shop_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+            </field>
+        </record>
+  
+        <!-- Sales Quotation -->
+        <record id="view_order_company_form_upgraded" model="ir.ui.view">
+            <field name="name">sale.order.upgraded.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="view_order_company_form"></field>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page/field[@name=
+                'order_line']/tree/field[@name='product_id']"
+                   position="attributes" version="7.0">
+                   
+                   <attribute name="context">{'partner_id':parent.partner_id, 'quantity':product_uom_qty,'search_default_all':1, 'pricelist':parent.pricelist_id, 'tgt_pricelist':parent.partner_id, 'shop':parent.shop_id, 'uom':product_uom,'group_by':'company_id'}</attribute>
+                   <attribute name="on_change">product_id_change(parent.pricelist_id,parent.tgt_pricelist_id,parent.charge_type,parent.well_deviation,parent.temprature, product_id, product_uom_qty, product_uom, product_uos_qty, product_uos, name, parent.partner_id , False, True, parent.date_order, False, parent.tax_id, False, context)</attribute>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name=
+                'order_line']/tree/field[@name='product_uom_qty']"
+                   position="attributes" version="7.0">
+                   
+                   <attribute name="on_change">product_id_change(parent.pricelist_id,parent.tgt_pricelist_id,parent.charge_type,parent.well_deviation,parent.temprature, product_id, product_uom_qty, product_uom, product_uos_qty, product_uos, name, parent.partner_id, False, True, parent.date_order, False, parent.tax_id, False, context)</attribute>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name=
+                'order_line']/tree/field[@name='product_uom']"
+                   position="attributes" version="7.0">
+                   
+                   <attribute name="on_change">product_uom_change(parent.pricelist_id,parent.tgt_pricelist_id,parent.charge_type,parent.well_deviation,parent.temprature,product_id,product_uom_qty,product_uom,product_uos_qty,product_uos,name, parent.partner_id, False, False, parent.date_order, context)</attribute>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name=
+                'order_line']/tree/field[@name='tax_id']"
+                   position="attributes" version="7.0">
+                   <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="account_analytic_analysis.action_account_analytic_overdue_all" model="ir.actions.act_window">
+            <field name="name">Cost Centres</field>
+        </record>
+        <record id="account_analytic_analysis.menu_action_account_analytic_overdue_all" model="ir.ui.menu">
+            <field name="name">Cost Centres</field>
+        </record>
+        <delete model="ir.ui.menu" search="[('name','=','Cost Centres')]"></delete>
+        <delete model="ir.ui.menu" search="[('name','=','Leads')]" />
+        <delete model="crm.case.stage" search="[('name','in',['Opportunity','Qualification','Proposition'])]" />
+
+        <record id="sale_contract_tree" model="ir.ui.view">
+            <field name="name">sale.contract.form.inherit</field>
+            <field name="model">sale.contract</field>
+
+            <field name="arch" type="xml">
+                <tree version="7.0" string="Contract Details">
+                    <field name="name"></field>
+                    <field name="code"></field>
+                    <field name="partner_id"></field>
+                    <field name="amount"></field>
+                    <field name="start_date"></field>
+                    <field name="company_id"></field>
+                    <field name="enduser_ids" string="No. End Users"></field>
+                    <field name="order_ids"></field>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="sale_contract_form" model="ir.ui.view">
+            <field name="name">sale.contract.form.inherit</field>
+            <field name="model">sale.contract</field>
+            <field name="priority" eval="1"></field>
+
+            <field name="arch" type="xml">
+                <form version="7.0" string="Contract Details">
+                    <sheet string="Contract Information">
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field required="1" name="partner_id" domain="[('is_company','=',True)]"></field>
+                                <field name="amount"></field>
+                                <field name="manager_id"></field>
+                            </group>
+                            <group>
+                                <field name="code"></field>
+                                <field name="company_id" required="1" groups="base.group_multi_company" widget="selection"></field>
+                            </group>
+                        </group>
+                        <group string="End Users">
+                            <field name="enduser_ids" required="1">
+                                <tree editable="bottom">
+                                    <field name="partner_id" domain="[('is_company','=',True)]"></field>
+                                </tree>
+                                
+                            </field>
+                        </group>
+                        <notebook>
+                            <page string="Contract Information">
+                                <group>
+                                    <group>
+                                        <field name="start_date"></field>
+                                    </group>
+                                    <group>
+                                        <field name="end_date"></field>
+                                    </group>
+                                </group>
+                                <group string="Terms and Conditions">
+                                    <field name="description" nolabel="1"></field>
+                                </group>
+                                <group string="Upload Contract Ref.">
+                                    <field name="ref_doc" nolabel="1"></field>
+                                </group>
+                            </page>
+                            <page string="Sale Orders">
+                                <field name="order_ids" readonly="1"></field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_sales_contract">
+            <field name="name">Contracts</field>
+            <field name="res_model">sale.contract</field>
+            <field name="src_model">sale.contract</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="sale_contract_tree"></field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a contract.
+              </p><p>
+                Attach Sale orders with Thier respective contract so you keep reference.
+              </p>
+            </field>
+        </record>
+<!--  security  -->
+
+        <menuitem id="menu_sales_contract"
+        action="action_sales_contract" parent="base.menu_sales"
+        sequence="6" groups="base.group_sales_superuser_tgt" />
+       
+        <menuitem id="menu_sales_contract"
+        action="action_sales_contract" parent="base.menu_sales"
+        sequence="6" groups="base.group_sales_superuser_tgt" />
+        
+        <menuitem id="base.menu_invoiced" name="Invoicing" parent="base.menu_base_partner" sequence="5"  groups="base.group_sales_superuser_tgt,base.group_sales_manager_tgt"/>
+
+        <menuitem id="base.menu_partner_form" parent="base.menu_sales" action="base.action_partner_form" sequence="1" groups="base.group_sales_superuser_tgt"/>
+
+
+        <menuitem id="base.menu_base_config" name="Configuration" parent="base.menu_base_partner" sequence="30" groups="base.group_sales_superuser_tgt" />
+
+
+
+        <menuitem id="base.menu_product" parent="base.menu_base_partner" sequence="" groups="base.group_sales_superuser_tgt" />
+
+
+    </data>
+</openerp>

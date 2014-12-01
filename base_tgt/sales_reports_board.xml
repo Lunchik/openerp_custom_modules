@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+
+<!--        <record id="board_sale_by_cc_view_tree" model="ir.ui.view">
+        <field name="name">sale.by.cc.report.tree</field>
+        <field name="model">sale.by.cc.report</field>
+        <field name="arch" type="xml">
+            <tree version="7.0" string="Revenue By CostCentre">
+                <field name="costcentre_id"></field>
+                <field name="jan"></field>
+                <field name="feb"></field>
+                <field name="mar"></field>
+                <field name="apr"></field>
+                <field name="may"></field>
+                <field name="jun"></field>
+                <field name="jul"></field>
+                <field name="aug"></field>
+                <field name="sep"></field>
+                <field name="oct"></field>
+                <field name="nov"></field>
+                <field name="des"></field>
+                <field name="total" sum="Total"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_sale_by_cc_summary">
+        <field name="name">Revenue By Cost Centre</field>
+        <field name="res_model">sale.by.cc.report</field>
+        <field name="view_type">tree</field>
+        <field name="view_mode">tree,graph</field>
+        <field name="view_id" eval="False" />
+        <field name="context">{}</field>
+        <field name="domain">[]</field>
+    </record>
+
+
+
+
+        <record id="board_sale_by_cc_client_view_tree" model="ir.ui.view">
+        <field name="name">sale.by.cc.client.report.tree</field>
+        <field name="model">sale.by.cc.client.report</field>
+        <field name="arch" type="xml">
+            <tree version="7.0" string="Revenue By CostCentre / Customer">
+                <field name="partner_id"></field>
+                <field name="parent_id"></field>
+                <field name="jan"></field>
+                <field name="feb"></field>
+                <field name="mar"></field>
+                <field name="apr"></field>
+                <field name="may"></field>
+                <field name="jun"></field>
+                <field name="jul"></field>
+                <field name="aug"></field>
+                <field name="sep"></field>
+                <field name="oct"></field>
+                <field name="nov"></field>
+                <field name="des"></field>
+                <field name="total" sum="Total"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_sale_by_cc_client_summary">
+        <field name="name">Revenue By Cost Centre / Client</field>
+        <field name="res_model">sale.by.cc.client.report</field>
+        <field name="view_type">tree</field>
+        <field name="view_mode">tree,graph</field>
+        <field name="view_id" eval="False" />
+        <field name="context">{}</field>
+        <field name="domain">[]</field>
+    </record>
+
+
+
+
+        <record id="board_sale_by_service_general_view_tree" model="ir.ui.view">
+        <field name="name">sale.by.service.general.report.tree</field>
+        <field name="model">sale.by.service.general.report</field>
+        <field name="arch" type="xml">
+            <tree version="7.0" string="Gerneral Revenue By Service">
+                <field name="category_id"></field>
+                <field name="jan"></field>
+                <field name="feb"></field>
+                <field name="mar"></field>
+                <field name="apr"></field>
+                <field name="may"></field>
+                <field name="jun"></field>
+                <field name="jul"></field>
+                <field name="aug"></field>
+                <field name="sep"></field>
+                <field name="oct"></field>
+                <field name="nov"></field>
+                <field name="des"></field>
+                <field name="total" sum="Total"></field>
+            </tree>
+        </field>
+        </record>
+
+    <record model="ir.actions.act_window" id="action_sale_by_service_general_summary">
+        <field name="name">General Revenue By Service</field>
+        <field name="res_model">sale.by.service.general.report</field>
+        <field name="view_type">tree</field>
+        <field name="view_mode">tree,graph</field>
+        <field name="view_id" eval="False" />
+        <field name="context">{'group_by':['category_id']}</field>
+        <field name="domain">[]</field>
+    </record>
+
+
+        <record id="board_sale_by_service_view_tree" model="ir.ui.view">
+        <field name="name">sale.by.service.report.tree</field>
+        <field name="model">sale.by.service.report</field>
+        <field name="arch" type="xml">
+            <tree version="7.0" string="Revenue By Service">
+                <field name="defcol_one_id"></field>
+                <field name="defcol_two_id"></field>
+                <field name="jan"></field>
+                <field name="feb"></field>
+                <field name="mar"></field>
+                <field name="apr"></field>
+                <field name="may"></field>
+                <field name="jun"></field>
+                <field name="jul"></field>
+                <field name="aug"></field>
+                <field name="sep"></field>
+                <field name="oct"></field>
+                <field name="nov"></field>
+                <field name="des"></field>
+                <field name="total" sum="Total"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_sale_by_service_summary">
+        <field name="name">Revenue By Service</field>
+        <field name="res_model">sale.by.service.report</field>
+        <field name="view_type">tree</field>
+        <field name="view_mode">tree,graph</field>
+        <field name="view_id" eval="False" />
+        <field name="context">{'group_by':['defcol_two_id']}</field>
+        <field name="domain">[]</field>
+    </record>
+
+
+
+
+
+
+
+
+
+
+        <record id="board_sale_by_client_view_tree" model="ir.ui.view">
+        <field name="name">sale.by.client.report.tree</field>
+        <field name="model">sale.by.client.report</field>
+        <field name="arch" type="xml">
+            <tree version="7.0" string="Sales By Client">
+                <field name="partner_id"></field>
+                <field name="country_id"></field>
+                <field name="jan"></field>
+                <field name="feb"></field>
+                <field name="mar"></field>
+                <field name="apr"></field>
+                <field name="may"></field>
+                <field name="jun"></field>
+                <field name="jul"></field>
+                <field name="aug"></field>
+                <field name="sep"></field>
+                <field name="oct"></field>
+                <field name="nov"></field>
+                <field name="des"></field>
+                <field name="total"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_sale_by_client_summary">
+        <field name="name">Sales By Client</field>
+        <field name="res_model">sale.by.client.report</field>
+        <field name="view_type">tree</field>
+        <field name="view_mode">tree,graph</field>
+        <field name="view_id" eval="False" />
+        <field name="context">{}</field>
+        <field name="domain">[]</field>
+    </record>
+
+     <record id="board_rotator_sale_cache1_tree" model="ir.ui.view">
+        <field name="name">sale.by</field>
+        <field name="model">board.board</field>
+        <field name="inherit_id" ref="base_tgt.board_rotator_sale_cache_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/board/column[1]" position="inside">
+                
+                <action name="%(action_sale_by_client_summary)d" string="Revenue By Client"/>
+                <action name="%(action_sale_by_service_general_summary)d" string="General Revenue By Service"/>
+                <action name="%(action_sale_by_service_summary)d" string="Revenue By Service"/>
+                <action name="%(action_sale_by_cc_summary)d" string="Revenue By Cost Centre"/>
+                <action name="%(action_sale_by_cc_client_summary)d" string="Revenue By Cost Centre / Customer"/>
+            </xpath>
+        </field>
+    </record>
+    -->
+    </data>
+</openerp>

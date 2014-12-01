@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="view_product_tgt_pricelist_form9uy2" model="ir.ui.view">
+            <field name="name">tgt.log.analysis.asset.form</field>
+            <field name="model">tgt.log.analysis.asset</field>
+            <field name="arch" type="xml">
+                <form string="Log Assets utilization Analysis" version="7.0">
+                    <sheet>
+                        <group>
+                            <group><field name="company_ids" widget="many2many_tags"></field></group>
+                            <group>
+                                <field name="date_from"></field>
+                                <field name="date_to"></field>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button string="Print report" class="oe_highlight" type="object" name="print_report"></button>
+                        <button special="cancel" string="cancel"></button>
+                    </footer>
+                    
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_sales_analysis_assets">
+            <field name="name">Assets utilization/Sales Analysis</field>
+            <field name="res_model">tgt.log.analysis.asset</field>
+            <field name="src_model">tgt.log.analysis.asset</field>
+            <field name="view_type">form</field>
+            <field name="target">new</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" ref="view_product_tgt_pricelist_form92"></field>
+            
+        </record>
+<!--  security  -->
+
+        
+
+
+         <menuitem id="menu_sales_analysis_assets"
+        action="action_sales_analysis_assets" parent="menu_base_sales_analysis"
+        sequence="12" groups="base.group_sales_superuser_tgt" />
+    </data>
+</openerp>

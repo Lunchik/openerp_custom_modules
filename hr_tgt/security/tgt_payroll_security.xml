@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record id="base.group_hr_user_tgt" model="res.groups">
+        <field name="name">HR Officer</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_hr_user'))]"/>
+    </record>
+    
+    <record id="base.group_hr_manager_tgt" model="res.groups">
+        <field name="name">HR Manager</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_hr_user'))]"/>
+    </record>
+
+    <record id="base.group_hr_supervisor_tgt" model="res.groups">
+        <field name="name">HR Supervisor</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_hr_user'))]"/>
+    </record>
+
+    <record id="base.group_hr_superuser_tgt" model="res.groups">
+        <field name="name">HR Superuser</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_hr_manager'))]"/>
+    </record>
+
+</data>
+</openerp>

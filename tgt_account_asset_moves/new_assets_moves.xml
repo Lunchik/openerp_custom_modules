@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+<record model="ir.ui.view" id="category_inhert_form">
+            <field name="name">category inhert form</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_category_form"/>
+            <field name="model">account.asset.category</field>
+           <field name="arch" type="xml">
+                <xpath expr='//field[@name="account_expense_depreciation_id"]' position='after'>
+
+                    <field string="Asset Clearing Account" domain="[('company_id','=',company_id),('type','!=','view')]" name="account_asset_new_cr"/>
+
+                 </xpath>
+            </field>
+        </record>
+</data>
+</openerp>  

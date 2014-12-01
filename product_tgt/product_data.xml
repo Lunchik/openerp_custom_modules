@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="product_category_tools" model="product.category">
+            <field name="name">Tools</field>
+        </record>
+        <record id="product_category_services" model="product.category">
+            <field name="name">Services</field>
+        </record>
+        <record id="product_category_components" model="product.category">
+            <field name="name">Components</field>
+        </record>
+        <record id="product_category_extra" model="product.category">
+            <field name="name">Extra Charges</field>
+        </record>
+
+        <record id="product_uom_each" model="product.uom">
+            <field name="category_id" ref="product.product_uom_categ_unit"/>
+            <field name="name">Each</field>
+            <field name="factor" eval="1.0"/>
+            <field name="rounding" eval="1.0"/>
+        </record>
+
+        <record id="product_uom_feet" model="product.uom">
+            <field name="category_id" ref="product.uom_categ_length"/>
+            <field name="name">Feet</field>
+            <field name="factor" eval="1.0"/>
+        </record>
+
+        <record id="product_tgt_product_1" model="product.product">
+            <field name="name">SNL</field>
+            <field name="categ_id" ref="product_category_tools"/>
+            <field name="standard_price">1000</field>
+            <field name="list_price">1300</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">SNL</field>
+            <field name="description_sale">SNL Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_2" model="product.product">
+            <field name="name">HPT</field>
+            <field name="categ_id" ref="product_category_tools"/>
+            <field name="standard_price">1000</field>
+            <field name="list_price">1300</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">HPT</field>
+            <field name="description_sale">HPT Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_3" model="product.product">
+            <field name="name">MID</field>
+            <field name="categ_id" ref="product_category_tools"/>
+            <field name="standard_price">1000</field>
+            <field name="list_price">1300</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">MID</field>
+            <field name="description_sale">MID Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_4" model="product.product">
+            <field name="name">PNN</field>
+            <field name="categ_id" ref="product_category_tools"/>
+            <field name="standard_price">1000</field>
+            <field name="list_price">1300</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">PNN</field>
+            <field name="description_sale">PNN Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_5" model="product.product">
+            <field name="name">MPLT</field>
+            <field name="categ_id" ref="product_category_tools"/>
+            <field name="standard_price">1000</field>
+            <field name="list_price">1300</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">MPLT</field>
+            <field name="description_sale">MPLT Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_6" model="product.product">
+            <field name="name">SNL – Leak</field>
+            <field name="categ_id" ref="product_category_services"/>
+            <field name="standard_price">1000</field>
+            <field name="list_price">1300</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">SNL – Leak</field>
+            <field name="description_sale">SNL – Leak Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_7" model="product.product">
+            <field name="name">SNL – RSV</field>
+            <field name="categ_id" ref="product_category_services"/>
+            <field name="standard_price">1298</field>
+            <field name="list_price">1370</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">SNL – RSV</field>
+            <field name="description_sale">SNL – RSV Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_8" model="product.product">
+            <field name="name">SNL - PRS</field>
+            <field name="categ_id" ref="product_category_services"/>
+            <field name="standard_price">1000</field>
+            <field name="list_price">1300</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">SNL - PRS</field>
+            <field name="description_sale">SNL - PRS Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_9" model="product.product">
+            <field name="name">MID – SNGL</field>
+            <field name="categ_id" ref="product_category_services"/>
+            <field name="standard_price">1000</field>
+            <field name="list_price">1300</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">MID – SNGL</field>
+            <field name="description_sale">MID – SNGL Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_10" model="product.product">
+            <field name="name">MID – DUAL</field>
+            <field name="categ_id" ref="product_category_services"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">1350</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">MID – DUAL</field>
+            <field name="description_sale">MID – DUAL Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_11" model="product.product">
+            <field name="name">MID – 3B</field>
+            <field name="categ_id" ref="product_category_services"/>
+            <field name="standard_price">1700</field>
+            <field name="list_price">1600</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">MID – 3B</field>
+            <field name="description_sale">MID – 3B Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_12" model="product.product">
+            <field name="name">HPT – Leak</field>
+            <field name="categ_id" ref="product_category_services"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">1390</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">HPT – Leak</field>
+            <field name="description_sale">HPT – Leak Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_13" model="product.product">
+            <field name="name">HPT - RSV</field>
+            <field name="categ_id" ref="product_category_services"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">1390</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">HPT - RSV</field>
+            <field name="description_sale">HPT - RSV Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_14" model="product.product">
+            <field name="name">PNN – LOG</field>
+            <field name="categ_id" ref="product_category_services"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">1390</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">PNN – LOG</field>
+            <field name="description_sale">PNN – LOG Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_15" model="product.product">
+            <field name="name">MPLT – Basic</field>
+            <field name="categ_id" ref="product_category_services"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">1390</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">MPLT – Basic</field>
+            <field name="description_sale">MPLT – Basic Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_16" model="product.product">
+            <field name="name">MPLT – Full</field>
+            <field name="categ_id" ref="product_category_services"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">1390</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">MPLT – Full</field>
+            <field name="description_sale">MPLT – Full Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_17" model="product.product">
+            <field name="name">MPLT – SPIN</field>
+            <field name="categ_id" ref="product_category_services"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">1390</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">MPLT – SPIN</field>
+            <field name="description_sale">MPLT – SPIN Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_18" model="product.product">
+            <field name="name">MPLT – COR</field>
+            <field name="categ_id" ref="product_category_services"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">1340</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">MPLT – COR</field>
+            <field name="description_sale">MPLT – COR Service</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_19" model="product.product">
+            <field name="name">Depth</field>
+            <field name="categ_id" ref="product_category_components"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">1390</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_feet"/>
+            <field name="uom_po_id" ref="product_uom_feet"/>
+            <field name="description">Depth</field>
+            <field name="description_sale">Depth</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+
+        <record id="product_tgt_product_21" model="product.product">
+            <field name="name">H2S</field>
+            <field name="categ_id" ref="product_category_components"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">1200</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">H2S</field>
+            <field name="description_sale">H2S</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_23" model="product.product">
+            <field name="name">Conveyance</field>
+            <field name="categ_id" ref="product_category_components"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">1200</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">Conveyance</field>
+            <field name="description_sale">Conveyance</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_230" model="product.product">
+            <field name="name">Survey</field>
+            <field name="categ_id" ref="product_category_components"/>
+            <field name="standard_price">1250</field>
+            <field name="list_price">1250</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">Survey</field>
+            <field name="description_sale">Survey</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_24" model="product.product">
+            <field name="name">Cancelation</field>
+            <field name="categ_id" ref="product_category_extra"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">1200</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">Cancelation</field>
+            <field name="description_sale">Cancelation</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_25" model="product.product">
+            <field name="name">Mobilization/DeMobilization</field>
+            <field name="categ_id" ref="product_category_extra"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">1230</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">Mobilization/DeMobilization</field>
+            <field name="description_sale">Mobilization/DeMobilization</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_26" model="product.product">
+            <field name="name">Engineer</field>
+            <field name="categ_id" ref="product_category_extra"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">120</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product.product_uom_day"/>
+            <field name="uom_po_id" ref="product.product_uom_day"/>
+            <field name="description">Engineer Per Day</field>
+            <field name="description_sale">Engineer Per Day</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_27" model="product.product">
+            <field name="name">Mileage</field>
+            <field name="categ_id" ref="product_category_extra"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">30</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product.product_uom_km"/>
+            <field name="uom_po_id" ref="product.product_uom_km"/>
+            <field name="description">Per Kilometer</field>
+            <field name="description_sale">Milage Per Kilometer</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_28" model="product.product">
+            <field name="name">Standby</field>
+            <field name="categ_id" ref="product_category_extra"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">30</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product.product_uom_hour"/>
+            <field name="uom_po_id" ref="product.product_uom_hour"/>
+            <field name="description">Idle Engineer</field>
+            <field name="description_sale">Engineer per hour</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_29" model="product.product">
+            <field name="name">Tool Rental</field>
+            <field name="categ_id" ref="product_category_extra"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">800</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product.product_uom_day"/>
+            <field name="uom_po_id" ref="product.product_uom_day"/>
+            <field name="description">Tools Rental</field>
+            <field name="description_sale">Tools</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product_tgt_product_30" model="product.product">
+            <field name="name">Lost In Hole (LIH)</field>
+            <field name="categ_id" ref="product_category_extra"/>
+            <field name="standard_price">1200</field>
+            <field name="list_price">1800</field>
+            <field name="type">service</field>
+            <field name="supply_method">buy</field>
+            <field name="uom_id" ref="product_uom_each"/>
+            <field name="uom_po_id" ref="product_uom_each"/>
+            <field name="description">Lost In Hole (LIH)</field>
+            <field name="description_sale">Lost In Hole (LIH)</field>
+            <field name="property_account_income" ref="l10n_tgt.trade_receivables"></field>
+            <field name="property_account_expense" ref="l10n_tgt.trade_accounts_payables"></field>
+            <field name="company_id" eval="False"></field>
+        </record>
+
+        <record id="product.product_product_consultant" model="product.product">
+            <field name="sale_ok" eval="False"></field>
+        </record>
+
+        
+    </data>
+</openerp>

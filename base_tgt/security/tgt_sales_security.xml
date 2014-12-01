@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record id="base.group_sales_user_tgt" model="res.groups">
+        <field name="name">Sales Officer</field>
+        <field name="category_id" ref="base.module_category_sales_management"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_sale_salesman'))]"/>
+    </record>
+    
+    <record id="base.group_sales_manager_tgt" model="res.groups">
+        <field name="name">Sales Manager</field>
+        <field name="category_id" ref="base.module_category_sales_management"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_sale_salesman_all_leads'))]"/>
+    </record>
+
+    <record id="base.group_sales_supervisor_tgt" model="res.groups">
+        <field name="name"> Sales Supervisor</field>
+        <field name="category_id" ref="base.module_category_sales_management"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_sale_salesman_all_leads'))]"/>
+    </record>
+
+    <record id="base.group_sales_superuser_tgt" model="res.groups">
+        <field name="name">Sales Superuser</field>
+        <field name="category_id" ref="base.module_category_sales_management"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_sale_manager'))]"/>
+    </record>
+
+
+</data>
+</openerp>

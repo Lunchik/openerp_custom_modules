@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_expense_category" model="ir.ui.view">
+            <field name="name">hr.expense.category.form</field>
+            <field name="model">hr.expense.category</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form version="7.0" string="Expense Category">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"></field>
+                            </group>
+                            <group>
+                                <field name="company_id" groups="base.group_multi_company" widget="selection"></field>
+                                <field name="expense_account_id" domain="[('company_id', '=', company_id), ('type','!=', 'view')]"></field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <record id="view_expense_category_tree" model="ir.ui.view">
+            <field name="name">hr.expense.category</field>
+            <field name="model">hr.expense.category</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree version="7.0" string="Expense Categories">
+                    <field name="name"></field>
+                    <field name="company_id"></field>
+                    <field name="expense_account_id"></field>
+                </tree>
+            </field>
+        </record>
+
+         <record id="action_view_hr_expense_category_form" model="ir.actions.act_window">
+            <field name="name">Expense Categories</field>
+            <field name="res_model">hr.expense.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target"></field>
+            <field name="view_id" ref="view_expense_category_tree"/>
+        </record>
+
+        <menuitem id="menu_hr_expense_category" parent="hr.menu_hr_configuration" action="action_view_hr_expense_category_form" name="Expense categories" sequence="1"/>
+
+        <record id="view_expenses_form_ext" model="ir.ui.view">
+            <field name="name">hr.expense.form.extend</field>
+            <field name="model">hr.expense.expense</field>
+            <field name="inherit_id" ref="hr_expense.view_expenses_form"></field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='journal_id']"
+                   position="after" version="7.0">
+                   <field name="period_id" required="1" domain="[('company_id','=',company_id)]"></field>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='line_ids']/form/group/group/field[@name='product_id']"
+                   position="attributes" version="7.0">
+                   <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='line_ids']/tree/field[@name='product_id']"
+                   position="attributes" version="7.0">
+                   <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='line_ids']/tree/field[@name='product_id']"
+                   position="after" version="7.0">
+                   <field domain="[('type', '!=', 'view'), ('company_id', '=', parent.company_id)]" name="expense_account_id" required="1"></field>
+                </xpath>
+                <button name="action_view_receipt" states="done" string="Open Accounting Entries" type="object" groups="account.group_account_invoice" position="after">
+                    <button name="action_register_payment" states="done" string="Register Payment" type="object" groups="account.group_account_invoice" class="oe_highlight"/>
+                </button>
+            </field>
+        </record>
+
+        <delete id="hr_expense.menu_hr_product" model="ir.ui.menu"></delete>
+
+        <menuitem id="base_expns_menu" name="Expenses" sequence="8" parent="account.menu_finance"/>
+        <menuitem action="hr_expense.expense_all" id="menu_expense_all" name="Employee Payment" parent="base_expns_menu"/>
+
+    </data>
+</openerp>

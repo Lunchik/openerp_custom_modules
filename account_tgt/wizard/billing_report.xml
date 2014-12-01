@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+     <data>
+
+        <record id="account_billing_report" model="ir.ui.view">
+            <field name="name">Account Billing Report XCEL</field>
+            <field name="model">account.billing.report</field>
+            <field name="arch" type="xml">
+                <form string="Account Billing Report" version="7.0">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="company_id" readonly="1" invisible="1"></field>
+                                <field name="type" required="1"></field>
+                            </group>
+                            <group>
+                                <field name="year" required="1" domain="[('company_id', '=', company_id)]"  attrs="{'invisible':[('type','!=', 'billing')]}"></field>
+                                <field name="filter" required="1"></field>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button type="object" string="Print Report" name="print_report" class="oe_highlight"></button>
+                        <button string="cancel" special="cancel"></button>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_account_billing_xcel_menu" model="ir.actions.act_window">
+            <field name="name">Account Billing Report XCEL</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.billing.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+                icon="STOCK_PRINT"
+                name="Account Billing Report XCEL"
+                parent="account_tgt.final_accounting_reports_xcel"
+                action="action_account_billing_xcel_menu"
+                id="menu_account_billing_report_xcel"
+               />
+
+    </data>
+</openerp>

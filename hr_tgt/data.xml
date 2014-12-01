@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+       <record id="Administration" model="hr.department"> <field name="name">Administration</field> </record>
+	   <record id="Executive" model="hr.department"> <field name="name">Executive</field> </record>
+	   <record id="Business_Development" model="hr.department"> <field name="name">Business Development</field> </record>
+	   <record id="Well_Integrity" model="hr.department"> <field name="name">Well Integrity</field> </record>
+	   <record id="Finance" model="hr.department"> <field name="name">Finance</field> </record>
+	   <record id="Human_Resources" model="hr.department"> <field name="name">Human Resources</field> </record>
+	   <record id="HR_ADMIN" model="hr.department"> <field name="name">Human Resources and Admin</field> </record>
+	   <record id="Technology" model="hr.department"> <field name="name">Technology</field> </record>
+	   <record id="Sales_Marketing" model="hr.department"> <field name="name">Sales and Marketing</field> </record>
+	   <record id="Operations" model="hr.department"> <field name="name">Operations</field> </record>
+	   <record id="Health_safety" model="hr.department"> <field name="name">Healthy Safety Environment</field> </record>
+	                                                           
+		
+
+
+
+
+
+
+	   <delete model="ir.ui.menu" search="[('name','=','Time Tracking')]" />
+	   <delete model="ir.ui.menu" search="[('name','=','Timesheet Activities')]" />
+
+
+
+
+
+
+
+    </data>
+	
+	     
+	
+</openerp>
+
+

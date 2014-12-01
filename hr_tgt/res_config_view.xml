@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_human_resources_configuration" model="ir.ui.view">
+            <field name="name">hr settings</field>
+            <field name="model">hr.config.settings</field>
+            <field name="inherit_id" ref="hr.view_human_resources_configuration"></field>
+            <field name="arch" type="xml">
+                <field name="module_hr_expense" position="before">
+                    <label for="expense_account_id"></label>
+                    <field domain="[('type','!=','view'), ('type', '=', 'payable')]" name="expense_account_id" class="oe_inline"></field>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
